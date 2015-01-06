@@ -12,8 +12,8 @@ apt-get update
 # Avoid the prompts when installing mysql
 export DEBIAN_FRONTEND=noninteractive
 
-# Install packages that we need/want
-apt-get install -yq \
+# Install packages that we need
+apt-get install -yq --no-install-recommends \
     build-essential \
     python-dev \
     curl \
@@ -21,10 +21,13 @@ apt-get install -yq \
     libmysqlclient-dev \
     mysql-server \
     python-pip \
-    rabbitmq-server \
+    rabbitmq-server
+
+# Nice to have
+apt-get install -yq --no-install-recommends \
     tmux \
     vim \
-    --no-install-recommends
+    ipython
 
 # Need to upgrade `distribute` before pip can install Django.
 easy_install -U distribute 
