@@ -23,6 +23,8 @@ apt-get install -yq --no-install-recommends \
     python-pip \
     rabbitmq-server
 
+gem install sass
+
 # Nice to have
 apt-get install -yq --no-install-recommends \
     tmux \
