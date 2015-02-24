@@ -6,6 +6,8 @@
 
 # Vagrant runs this as sudo.
 
+PIP_URL="https://bootstrap.pypa.io/get-pip.py"
+
 # Update the system
 apt-get update
 
@@ -20,8 +22,13 @@ apt-get install -yq --no-install-recommends \
     git \
     libmysqlclient-dev \
     mysql-server \
-    python-pip \
     rabbitmq-server
+
+# python-pip is broken if we install from apt-get
+# http://askubuntu.com/questions/561377/pip-wont-run-throws-errors-instead
+wget $PIP_URL
+python get-pip.py
+rm get-pip.py
 
 gem install sass
 
