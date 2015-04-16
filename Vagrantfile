@@ -34,5 +34,5 @@ Vagrant.configure(2) do |config|
   config.vm.network :forwarded_port, :host => 8000, :guest => 8000
 
   # MySQL port
-  config.vm.network :forwarded_port, :host => 3306, :guest => 3306
+  #config.vm.network :forwarded_port, :host => 3306, :guest => 3306
 end
